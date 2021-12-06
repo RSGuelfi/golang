@@ -1,0 +1,37 @@
+  # Comandos do terminal
+- ; = executará ambos os comandos independente do resultado;
+- && = se o primeiro for executado com sucesso o proximo tambem sera;
+- || = se o primeiro não for executado com sucesso executará só o segundo comando;
+    EX: a ; 5 || b && c
+- mkdir = Cria uma nova pasta, ex: mkdir Nova Pasta
+- cd = entra em uma pasta, ex: cd pasta123
+   cd .. = volta para a pasta anterior
+   para prevenir o erro bash: cd: too many arguments use aspas duplas ex: cd "Desktop/workspace/golang-main/Api_em_go/api_Uber/"
+- touch = cria um novo arquivo, ex: touch main.go
+- ls = mostra todos os arquivos da pasta atual, ex: ls -a
+    -a = mostra arquivos ocultos
+    -la = mostra outras informações
+- rm = apaga arquivos, ex: rm pastalixo
+- clear = limpa o terminal
+- nano = é um editor de texto no terminal, ex: nano main.go
+- cat = mostra o conteudo de um arquivo de texto no terminal, ex: cat main.go
+- grep = procura arquvios com nomes especificos, ex: grep -i Main 
+    -i = ignora letras maiusculas e minusculas
+- cat = descreve o arquivo qualquer arquivo em formato de texto
+- sudo apt-get update -y && sudo apt-get upgrade -y
+    faz update e upgrade de todos os arquivos do computador
+- logout superuser terminal mode (su -): exit 
+- connect to mysql(password = root): mysql -u root -p         
+
+  # Comandos Golang
+- go mod init github.com/RSGuelfi/golang-main
+- Golang Finalizar api ports:
+ fuser -k {Numero da porta}/tcp & go run main.go & rm SQLite3.db <-- (OPICIONAL)
+- fuser -k 5123/tcp && go run main.go 
+- golint = procura erros de formatação no codigo 
+
+  # Extras 
+- para usar caracteres especiais: Ctrl+Shift+U+Valor
+
+
+__________________________________________________________________________________

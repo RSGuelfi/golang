@@ -1,0 +1,26 @@
+associate car.id to owner.cars to owner_cars association && create car to owner 
+
+CREATE CAR and associate to OWNER
+
+  ASSOCIATION TABLEs
+  ___________________
+ | car_id | owner_id |
+ |________|__________|
+ |    1   |     1    |
+ |    2   |     1    |   
+ |    1   |     3    |   
+ |    2   |     2    |
+  ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨                                          
+  ________________________________ 
+ | car_id | owner_cars | owner_id |
+ |________|____________|__________|
+ |    1   |      1     |     1    |
+ |    2   |      2     |     1    |   
+ |    1   |      3     |     3    |   
+ |    2   |      4     |     2    |
+  ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨                               
+
+
+sudo apt-get update -y && sudo apt-get upgrade -y
+
+

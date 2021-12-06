@@ -1,0 +1,6 @@
+github.com/RSGuelfi/goarea v0.0.0-20210428124452-cd204656882c h1:DSXl5Ii03oXmXmzyGmKpw9x3bzUEiMybbCVg1dpBhhw=
+github.com/RSGuelfi/goarea v0.0.0-20210428124452-cd204656882c/go.mod h1:T780nNweep1YrqVpKfbhcjDoQNdAn1/7qf/oC//yKZg=
+github.com/RSGuelfi/html v0.0.0-20210430141855-e9cc22a04f5b h1:efh18+h71sY9/nT9YYq1zGZmObh/9tEWJaL6Zr1xDk0=
+github.com/RSGuelfi/html v0.0.0-20210430141855-e9cc22a04f5b/go.mod h1:lbz6zJoMkvyO4s9R8+A1abPY6w9xXtkEDNVInjdfufg=
+github.com/go-sql-driver/mysql v1.6.0 h1:BCTh4TKNUYmOmMUcQ3IipzF5prigylS7XXjEkfCHuOE=
+github.com/go-sql-driver/mysql v1.6.0/go.mod h1:DCzpHaOWr8IXmIStZouvnhqoel9Qv2LBy8hT2VhHyBg=
