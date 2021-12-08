@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Link
+Name=go - Why does gorm db.First() panic with "invalid memory address or nil pointer dereference"? - Stack Overflow
+Comment=
+Icon=google-chrome
+URL=https://stackoverflow.com/questions/31467498/why-does-gorm-db-first-panic-with-invalid-memory-address-or-nil-pointer-deref
