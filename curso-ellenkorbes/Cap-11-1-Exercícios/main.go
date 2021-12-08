@@ -13,7 +13,10 @@ func main() {
 	pessoa1 := pessoa{
 		nome:      "Renata",
 		sobrenome: "Pimeta",
-		sabores:   []string{"pistache", "baunilha", ""},
+		sabores:   []string{"pistache", "baunilha", "morango"},
 	}
-	fmt.Println(pessoa1)
+	fmt.Println(pessoa1.nome, ":")
+	for _, v := range pessoa1.sabores {
+		fmt.Println("\t", v)
+	}
 }

@@ -11,4 +11,5 @@ func main() {
 		idade: 50,
 	}
 	fmt.Println(x)
+
 }

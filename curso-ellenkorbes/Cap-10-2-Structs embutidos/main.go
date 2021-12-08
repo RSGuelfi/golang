@@ -30,5 +30,4 @@ func main() {
 	fmt.Println(pessoa2)
 	fmt.Println(pessoa3)
 	fmt.Println(pessoa4)
-
 }
