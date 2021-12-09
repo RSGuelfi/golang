@@ -57,7 +57,7 @@ func TRequest(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(request)
 }
 
-// CLIENT
+// 						CLIENT
 
 func IndexCli(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
@@ -112,7 +112,7 @@ func DeleteCli(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// ADDRESS
+// 						ADDRESS
 
 func IndexAddr(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
@@ -167,7 +167,7 @@ func DeleteAddr(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// RESTAURANT
+// 						RESTAURANT
 
 func IndexRest(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
@@ -222,7 +222,7 @@ func DeleteRest(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// PRODUCT
+// 						PRODUCT
 
 func IndexProd(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
