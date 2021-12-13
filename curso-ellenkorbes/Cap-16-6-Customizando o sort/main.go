@@ -31,7 +31,8 @@ func (a ordenarPorLucroProDonoDoPosto) Swap(i, j int)      { a[i], a[j] = a[j], 
 
 func main() {
 
-	carros := []Carro{{"Chevete", 50, 8},
+	carros := []Carro{
+		{"Chevete", 50, 8},
 		{"Porsche", 300, 5},
 		{"Fusca", 20, 30},
 	}

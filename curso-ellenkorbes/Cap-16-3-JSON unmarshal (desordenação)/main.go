@@ -25,4 +25,5 @@ func main() {
 
 	fmt.Println(jamesbond)
 	fmt.Println(jamesbond.Profissao)
+
 }

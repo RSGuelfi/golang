@@ -15,7 +15,8 @@ func main() {
 
 	fmt.Println(si)
 
-	ss := []string{"Lang -", "Gopher -", "Pike -", "Func -", "Go -"}
+	ss := []string{"Lang -", "Gopher -",
+		"Pike -", "Func -", "Go -"}
 
 	fmt.Println(ss)
 

@@ -17,7 +17,7 @@ func main() {
 
 	fmt.Println(string(sb))
 
-	fmt.Println(bcrypt.CompareHashAndPassword(sb, []byte(senha)))
 	fmt.Println(bcrypt.CompareHashAndPassword(sb, []byte(senhaerrada)))
+	fmt.Println(bcrypt.CompareHashAndPassword(sb, []byte(senha)))
 
 }
