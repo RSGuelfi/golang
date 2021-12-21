@@ -1,8 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Link
-Name=Go sort - sorting slices and user-defined collections in Golang
+Name=go sort
 Comment=
 Icon=google-chrome
 URL=https://zetcode.com/golang/sort/
-Name[en_US]=Go sort
