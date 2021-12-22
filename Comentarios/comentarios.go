@@ -163,7 +163,7 @@ func main() {
 
  - select = A instrução select permite que uma goroutine aguarde várias operações de comunicação, o select bloqueia até que um de seus casos possa ser executado, então ele executa aquele caso, ele escolhe um aleatoriamente se vários estiverem prontos.
 
- - channel = é uma ajuda ao goroutine para criar uma sincronização
+ - chan = é uma "ajuda" ao goroutine para criar uma sincronização
 
  - ch <- 1 // enviando dados para o canal (escrita)
    <-ch    // recebendo dados do canal (leitura)
@@ -270,6 +270,20 @@ func (origin Motorista) Distance(destination Motorista) float64 {
  - fmt.Println(reflect.DeepEqual(m1, m2)) = compara 2 (maps,arrays,structs,slices) e retorna "false" para se ambos forem diferentes
    e "true" se forem iguais
 
+ - IOTA =
+ 	const (
+	a = iota + 10000
+	_
+	c
+	x
+	_
+	z
+)
+func main() {
+	fmt.Println(a, c, x, z)
+}
+
  -
+
 
 */
