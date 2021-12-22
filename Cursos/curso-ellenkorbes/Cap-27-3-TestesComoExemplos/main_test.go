@@ -17,7 +17,7 @@ func TestSomaEmTabela(t *testing.T) {
 		{[]int{-5, 0, 5, 10}, 10},
 	}
 	for _, v := range tests {
-		z := soma(v.data...)
+		z := Soma(v.data...)
 		if z != v.answer {
 			t.Error("Expected:", v.answer, "Got:", z)
 		}
@@ -25,22 +25,27 @@ func TestSomaEmTabela(t *testing.T) {
 }
 
 func ExampleSoma() {
-	fmt.Println(soma(4, 2, 1))
-	// Output:7
+	fmt.Println(Soma(4, 2, 1))
+	fmt.Println(Soma(4, 2, 2))
+	fmt.Println(Soma(4, 2, 3))
+	// Output:
+	// 7
+	// 8
+	// 9
 }
 
 func TestSoma(t *testing.T) {
-	x := soma(3, 2, 1)
+	x := Soma(3, 2, 1)
 	resultado := 6
 	if x != resultado {
 		t.Error("Expected:", resultado, "Got:", x)
 	}
 }
 
-func TestSoma2(t *testing.T) {
-	x := soma(3, 2, 1)
-	resultado := 7
+func TestMultiplicacao(t *testing.T) {
+	x := Multiplicacao(10, 10)
+	resultado := 100
 	if x != resultado {
-		t.Error("Expected:", resultado, "Got:", x)
+		t.Error("Expected:", resultado, ", Got:", x)
 	}
 }
