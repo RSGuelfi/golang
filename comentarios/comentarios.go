@@ -188,7 +188,7 @@ func main() {
 		conn.Where("name = ?", ctx.Params("name")).First(&product)
 
 		ctx.JSON(product)
-		// Para usar essa função é necessario após o numero da porta, colocar o name que deseja encontrar. Ex: http :3001/XBOX
+		// Para usar essa função é necessario após o numero da porta, colocar o name que deseja encontrar. Ex: http :3001/NomedaFunção
 	})
 	- conn.Create(& {Name: "coisa", Value: 1234}) // Cria e Armazena dados no "servidor".
 	- conn.Delete(& , []int{ 5, 7 }) // Exclui um/multiplos pelo numero do id, no caso os numeros do id são = 5, 7.
@@ -213,12 +213,11 @@ func main() {
 }
 
 
- - defer realiza a função/metodo somente no final da função ex: (
+ - defer realiza a função/metodo somente no final da função ex:
 		func main() {
 			defer fmt.Println("abc")
 			fmt.Println("def")
 		}
-	)
 
  - & é usado como referencia (cria um "pointer" na variavel/expressão)
  - * é usado como uma deferencia em um "pointer" (pega o valor que a variavel/expressão está "pointing") ex: r *http.Request
