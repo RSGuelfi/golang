@@ -1,0 +1,43 @@
+version: '3.2'
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    hostname: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: rabbitmq
+      RABBITMQ_DEFAULT_PASS: rabbitmq
+      RABBITMQ_DEFAULT_VHOST: rabbitmq
+    ports:
+      - "5673"
+      - 15672:15672
+    volumes:
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+    networks:
+      -  rabbitmq
+
+  backend: 
+    image: golang
+    volumes:
+      - ./backend:/backend
+    working_dir: /app
+    ports:
+      - "8888"
+    command: bash -c "cd backend && go run main.go"
+    networks:
+      - rabbitmq
+
+  postgres:
+    image: postgres
+    ports:
+      - "5432"
+    environment:
+      - POSTGRES_DB=golangdocker
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - MAX_CONNECTIONS=300
+    networks:
+      - rabbitmq
+
+networks:
+  rabbitmq:
+    driver: bridge

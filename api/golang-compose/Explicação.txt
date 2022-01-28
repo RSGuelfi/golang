@@ -1,0 +1,32 @@
+Fazer Docker-compose com mongo, postgres, redis, rabbitmq
+
+-> Explicar o q é docker
+
+-> Explicar o q é docker-compose
+
+-> Explicar o q é imagem
+
+-> Explicar o q é container
+
+-> Explicar para q serve o docker
+
+(Docker)
+- Otimização de Recursos
+- Empacotamento da Aplicação
+- Imutavel
+- Facilidade no Deploy
+
+(Docker Compose)
+- Conjunto de imagens
+
+
+(Imagem)
+- Imutável
+- Read/Write
+
+(Container)
+- Container é uma padrão de unidade de software que empacota um codigo e todas as suas dependencias de forma que a aplicação possa ser executada em qualquer sistema operacional
+
+
+
+
