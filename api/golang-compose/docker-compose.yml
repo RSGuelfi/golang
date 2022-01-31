@@ -7,7 +7,7 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: rabbitmq
       RABBITMQ_DEFAULT_PASS: rabbitmq
-      RABBITMQ_DEFAULT_VHOST: /rabbitmq
+      RABBITMQ_DEFAULT_VHOST: /
     ports:
       - "5673"
       - 15672:15672
@@ -23,12 +23,13 @@ services:
     working_dir: /app
     ports:
       - "8888"
-    command: bash -c "cd backend && go run main.go"
+    command: bash -c "go run main.go"
     networks:
       - rabbitmq
     restart: on-failure
     depends_on:
       - rabbitmq  
+      - postgres
 
   postgres:
     image: postgres
