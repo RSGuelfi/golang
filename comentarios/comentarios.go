@@ -5,9 +5,9 @@ package main
 
  - O comando := só pode ser utilizado dentro de funções, ele cria e inicia variaveis
 
- - Para executar arquivos .go pelo terminal = go run pasta/*.go
+ - Para executar arquivos .go pelo terminal = go run *.go
 
- - struct é um conjunto de valores que podem ter seus tipos definidos:
+ - struct é um conjunto de "valores" que podem ter seus tipos definidos:
   type Item struct {
 	produtoID  uint
 	qtde       uint
@@ -16,7 +16,7 @@ package main
 }
 type Pedido struct {
 	userID uint
-	itens  []Item // Pega os valores de outro struct
+	itens  []Item // Pega os "valores" de outro struct
 }
 var Pedido1 = Pedido{
 	userID: 64342,
@@ -31,7 +31,7 @@ func main() {
 
  - Print() imprime (mostra) valores no "console", ex:
  func main() {
-   const name, age = "Rodrigo", 15
+   const name, age = "Humano", 78
    fmt.Print(name, " is ", age, " years old.\n")
  }
 
@@ -39,7 +39,7 @@ func main() {
 
  - Printf() imprime um valor e define um tipo a esse valor, ex:
  func main() {
-	 const name, age = "Rodrigo", 15
+	 const name, age = "Humano", 78
 	 fmt.Printf("%s is %d years old.\n", name, age)
 	}
 
@@ -82,11 +82,11 @@ func main() {
 	inteiro = &valor
 	fmt.Print(inteiro)}
 
- - uint = tem a mesma utilidade do int, mas somente com numeros positivos
+ - uint = tem a mesma utilidade do int, mas aceita somente numeros positivos
 
  - uintptr = é um inteiro que pode guardar bits de qualquer pointer
 
- - float 32 64 = define o valor como ponto flutuante, que pode ser de 32 ou 64 bits
+ - float/32/64 = define o valor como ponto flutuante, que pode ser de 32 ou 64 bits
 
  - bool = booleano (true | false)
 
@@ -99,7 +99,8 @@ func main() {
 
  - close = função que fecha um canal após o ultimo valor ser recebido
 
- - importar fmt é necessario para iusar as funções "Prints"
+ - importar fmt é necessario para usar as funções "Prints"
+ fmt.Println()
 
  - _ = blank indentifier é uma variável sem valor que pode ser utilizada para ignorar o retorno de certos valores, ex:
  _, y, _ := coord(p)  // Retornaria 3 valores mas vai retornar somento o valor de y
@@ -109,7 +110,7 @@ func main() {
 	funcsPorLetra := map[string]map[string]float64{
 		"G": { // string
   string // "Gabriela Silva": 15456.78, // float64
-			"Guga Pereira":   8456.78,
+			"Pereira":   8456.78,
 		},
 		"J": {
 			"José João": 11325.45,
@@ -123,12 +124,12 @@ func main() {
 	for letra, funcs := range funcsPorLetra {
 		fmt.Println(letra, funcs)
 		// Retorna:
-		G map[Gabriela Silva:15456.78 Guga Pereira:8456.78]
+		G map[Gabriela Silva:15456.78 Pereira:8456.78]
 		J map[José João:11325.45]
 	}
  }
 
- - Slice = tambem manipula arrays mas com certas limitações ex:
+ - Slice = tambem manipula arrays mas com algumas limitações ex:
  func main() {
 	array1 := [4]float64{1.1, 2, 5}
 	slice1 := []float64{1.1, 2, 5}
@@ -150,38 +151,42 @@ func main() {
 	fmt.Println(slice3, slice1)
  }
 
- - func main() {
-	fmt.Println(runtime.NumCPU()) // Checa o numero de cpus do computador
+ - Checa o numero de cpus do computador
+ 	func main() {
+		fmt.Println(runtime.NumCPU())
  }
 
  - Interface = coleção de metodos
 
- - go nomeDaFuncao(parametro opicional) = goroutine "chama" funções e as executa simultaneamente
+ - go nomeDaFuncao(parametro opicional) = a goroutine executa as funções simultaneamente
 
 
- - nil = valor 0 para ponteiros, interfaces, maps, slices, channels e funções, representando um valor não utilizado, um error com nil não mostra nenhum erro
+ - nil = valor 0, usado para detectar erros, se nil for igula a 1 significa que tem um erro
 
  - select = A instrução select permite que uma goroutine aguarde várias operações de comunicação, o select bloqueia até que um de seus casos possa ser executado, então ele executa aquele caso, ele escolhe um aleatoriamente se vários estiverem prontos.
 
- - chan = é uma "ajuda" ao goroutine para criar uma sincronização
+ - chan = é a declaração de um canal
 
- - ch <- 1 // enviando dados para o canal (escrita)
-   <-ch    // recebendo dados do canal (leitura)
+ - ch <- 1 // envia dados para o canal (escrita)
+   <-ch    // recebe dados do canal (leitura)
 
- - API com Fiber e Gorm = (Tenha como exemplo a API carros com sqlite3) {
+ - Como criar uma API com Fiber e Gorm = (Tenha como exemplo a API carros com sqlite3) {
 	 - 1º Importar = _ "github.com/jinzhu/gorm/dialects/sqlite"
 	 				   "github.com/jinzhu/gorm"
 					   "github.com/gofiber/fiber"
-	 Criar Struct e como primeiro argumento colocar gorm.Model   Ex:
-	 type Exemplo struct {
+
+	Criar Struct e como primeiro argumento colocar gorm.Model   Ex:
+	 type Pessoa struct {
 		 gorm.Model
 	 }
+
 	Criar uma variável para armazenar as funções principais do gorm. ex:var conn *gorm.DB
 	Inicializar as funções junto com a variável: conn, err = gorm.Open("sqlite3", "product.db")
 	Inicializar ctx Ex: app.Get("/", func(ctx *fiber.Ctx) {
 		conn.Find(&products) // Encontra dados de acordo com as condições dadas
 		ctx.JSON(products) // Converte os dados para o tipo JSON
 	})
+
 	Essa funcão busca dados pelo name: app.Get("/:name", func(ctx *fiber.Ctx) {
 		// É necessario criar um Name de tipo string dentro de um struct
 		var product models.Product
@@ -190,20 +195,25 @@ func main() {
 		ctx.JSON(product)
 		// Para usar essa função é necessario após o numero da porta, colocar o name que deseja encontrar. Ex: http :3001/NomedaFunção
 	})
-	- conn.Create(& {Name: "coisa", Value: 1234}) // Cria e Armazena dados no "servidor".
-	- conn.Delete(& , []int{ 5, 7 }) // Exclui um/multiplos pelo numero do id, no caso os numeros do id são = 5, 7.
-	- conn.Unscoped().Delete(& , []int{ 3, 2 }) = Deleta os dados permanentemente.
-	- app.Listen(3001) = Define o numero da porta que será usada.
-	- O arquivo product.db armazena os dados que foram criados ao inicializar o programa
-	- ctx.Download("") = baixa um arquivo pelo navegador
-	- ctx.Is("") = Se o valor enviado ao servidor for o mesmo da função Is, ele realizará a função que foi designado a fazer.
-	- ctx.Send("") = Manda uma mensagem para o cliente.
-	- ctx.Status() = Retorna um erro do tipo http Ex(400 = bad request).
-	- ctx.Method() =="POST" = Contem uma string que corresponde ao metodo http de request(GET, POST, PUT...)
-	- ctx.Render() = Renderiza uma template e envia os dados em forma de texto
-	- O metodo Get é mais recomendado para obter dados e o Post para enviar dados.
 
-	// A função abaixo permite a conexão do postgres ao banco de dados
+	-> conn.Create(& {Name: "coisa", Value: 1234}) // Cria e Armazena dados no "servidor".
+	-> conn.Delete(& , []int{ 5, 7 }) // Exclui um/multiplos pelo numero do id, no caso os numeros do id são = 5, 7.
+	-> conn.Unscoped().Delete(& , []int{ 3, 2 }) = Deleta os dados permanentemente.
+	-> app.Listen(3001) = Define o numero da porta que será usada.
+	-> O arquivo product.db armazena os dados que foram criados ao inicializar o programa
+	-> ctx.Download("") = baixa um arquivo pelo navegador
+	-> ctx.Is("") = Se o valor enviado ao servidor for o mesmo da função Is, ele realizará a função que foi designado a fazer.
+	-> ctx.Send("") = Manda uma mensagem para o cliente.
+	-> ctx.Status() = Retorna um erro do tipo http Ex(400 = bad request).
+	-> ctx.Method() =="POST" = Contem uma string que corresponde ao metodo http de request(GET, POST, PUT...)
+	-> ctx.Render() = Renderiza uma template e envia os dados em forma de texto
+	-> GET é usado somente para leitura de dados.
+	-> POST é usado somente para enviar dados.
+	-> PATCH UPDATE são usados somente para atualizar dados.
+	-> DELETE é usado somente para deletar dados.
+
+
+	A função abaixo permite a conexão do postgres ao banco de dados
 	func ConnectDB() *gorm.DB {
 	db, err := gorm.Open("postgres", "host=127.0.0.1 port=5432 user=postgres dbname=bankapp password=postgres sslmode=disable")
 	HandleErr(err)
@@ -228,7 +238,6 @@ func main() {
  - ! === NOT Reverte o valor da condição exp: se o valor for true ele irá transforma-lo em false. !(A && B) is true.
 
  - exemplo para adicionar valores de uma struct para outra struct:
-
 	type type1 []struct {
 	Field1 string
 	Field2 int
@@ -243,14 +252,13 @@ func main() {
 	t1 := type1{{"A", 1}, {"B", 2}}
 	t2 := type2(t1)
 	fmt.Println(t2)
-
 }
 
  - math.Round() = transforma uma var float em um int
 
  - math.Min() = retorna o menor valor entre as duas variaves
 
- - a função abaixo determina a distancia entre a Latitude e a Longitude de 2 lugares:
+ - a função abaixo determina a distancia entre a Latitude e a Longitude entre 2 "Motoristas":
 func (origin Motorista) Distance(destination Motorista) float64 {
 	degreesLat := degrees2radians(destination.Latitude - origin.Latitude)
 	degreesLong := degrees2radians(destination.Longitude - origin.Longitude)
