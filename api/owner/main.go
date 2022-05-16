@@ -32,6 +32,8 @@ type Owner struct {
 
 var db *gorm.DB
 
+// Formato JSON Automatico: w.Header().Set("Content-Type", "application/json")
+
 func Store(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)
