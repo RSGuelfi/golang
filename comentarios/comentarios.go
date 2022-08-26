@@ -294,3 +294,5 @@ func main() {
 
 
 */
+
+ANOTAR SOBRE FUNÇÃO : switch()
